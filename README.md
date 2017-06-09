@@ -7,7 +7,7 @@
 
 Because i can`t comfortable use [viewerjs](https://github.com/fengyuanchen/viewerjs) in react, so i create react-viewer to replace it.
 This is a fork of [react-viewer](https://github.com/infeng/react-viewer).
-Added option to download and hide navigation arrows when shows only one image.
+Added option to image download and hide navigation arrows when shows only one image.
 
 ## Installation
 
