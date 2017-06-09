@@ -39,7 +39,7 @@ export default class ViewerCore extends React.Component<ViewerProps, ViewerCoreS
     zoomable: true,
     rotatable: true,
     scalable: true,
-    downloadable: true
+    downloadable: true,
   };
 
   private prefixCls: string;
@@ -284,7 +284,7 @@ export default class ViewerCore extends React.Component<ViewerProps, ViewerCoreS
     const image = this.getImages()[activeIndex];
 
     let link = document.createElement('a');
-    link.setAttribute('style', 'position: fixed; left -10000px;') // making it invisible
+    link.setAttribute('style', 'position: fixed; left -10000px;'); // making it invisible
     link.href = image.src;
     link.setAttribute('download', image.name || '');
     document.body.appendChild(link);
