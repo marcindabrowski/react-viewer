@@ -11,7 +11,9 @@ export interface ViewerToolbarProps {
   zoomable: boolean;
   rotatable: boolean;
   scalable: boolean;
+  downloadable: boolean;
   changeable: boolean;
+  navigable: boolean;
 }
 
 export default class ViewerToolbar extends React.Component<ViewerToolbarProps, any> {
@@ -48,23 +50,31 @@ export default class ViewerToolbar extends React.Component<ViewerToolbarProps, a
       ]);
     }
     if (this.props.changeable) {
+      if (this.props.navigable) {
+        featureNodeArr = featureNodeArr.concat([
+          <li
+          key="prev"
+          className={`${this.props.prefixCls}-btn`} onClick={() => {this.handleAction(ActionType.prev);}}>
+            <Icon type={ActionType.prev}/>
+          </li>,
+        ]);
+      }
       featureNodeArr = featureNodeArr.concat([
-        <li
-        key="prev"
-        className={`${this.props.prefixCls}-btn`} onClick={() => {this.handleAction(ActionType.prev);}}>
-          <Icon type={ActionType.prev}/>
-        </li>,
         <li
         key="reset"
         className={`${this.props.prefixCls}-btn`} onClick={() => {this.handleAction(ActionType.reset);}}>
           <Icon type={ActionType.reset}/>
         </li>,
-        <li
-        key="next"
-        className={`${this.props.prefixCls}-btn`} onClick={() => {this.handleAction(ActionType.next);}}>
-          <Icon type={ActionType.next}/>
-        </li>,
       ]);
+      if (this.props.navigable) {
+        featureNodeArr = featureNodeArr.concat([
+          <li
+          key="next"
+          className={`${this.props.prefixCls}-btn`} onClick={() => {this.handleAction(ActionType.next);}}>
+            <Icon type={ActionType.next}/>
+          </li>,
+        ]);
+      }
     }
     if (this.props.rotatable) {
       featureNodeArr = featureNodeArr.concat([
@@ -95,6 +105,15 @@ export default class ViewerToolbar extends React.Component<ViewerToolbarProps, a
         className={`${this.props.prefixCls}-btn`}
         onClick={() => {this.handleAction(ActionType.scaleY);}}>
           <Icon type={ActionType.scaleY}/>
+        </li>,
+      ]);
+    }
+    if (this.props.downloadable) {
+      featureNodeArr = featureNodeArr.concat([
+        <li
+        key="download"
+        className={`${this.props.prefixCls}-btn`} onClick={() => {this.handleAction(ActionType.download);}}>
+          <Icon type={ActionType.download}/>
         </li>,
       ]);
     }

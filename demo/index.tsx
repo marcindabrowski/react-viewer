@@ -47,15 +47,18 @@ class App extends React.Component<any, Partial<State>> {
     let images = [{
       src: img,
       alt: 'lake',
+      name: 'lake.jpg'
     }, {
       src: img2,
       alt: 'mountain',
+      name: 'mountain.jpg'
     }, {
       src: img3,
-      alt: '',
+      alt: 'tibet',
+      name: 'tibet.jpg',
     }, {
       src: img4,
-      alt: '',
+      alt: ''
     }];
 
     let inline = this.state.mode === 'inline';
@@ -73,11 +76,11 @@ class App extends React.Component<any, Partial<State>> {
         <nav className="navbar navbar-fixed-top">
           <div className="container-fluid">
             <div className="navbar-brand">
-              <p>react-viewer</p>
+              <p>react-viewer-mda</p>
             </div>
           </div>
         </nav>
-        <a href="https://github.com/infeng/react-viewer">
+        <a href="https://github.com/marcindabrowski/react-viewer-mda">
           <img className="img-fork" src={forkImg} />
         </a>
         <div className="container">

@@ -1,6 +1,7 @@
 export interface ImageDecorator {
   src: string;
   alt?: string;
+  name?: string;
 }
 
 interface ViewerProps {
@@ -26,6 +27,8 @@ interface ViewerProps {
   rotatable?: boolean;
   /** 是否显示变换按钮 */
   scalable?: boolean;
+  /** Whether to display the download button  */
+  downloadable?: boolean;
 }
 
 export default ViewerProps;

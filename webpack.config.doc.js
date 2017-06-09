@@ -22,7 +22,7 @@ module.exports = function (webpackConfig) {
   };
 
   webpackConfig.output.path = './docs';
-  webpackConfig.output.publicPath = '/react-viewer/';
+  webpackConfig.output.publicPath = '/react-viewer-mda/';
 
   webpackConfig.module.loaders.forEach(function (loader, index) {
     if (loader.test.toString().indexOf('html') > 0) {
