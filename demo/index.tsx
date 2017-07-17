@@ -126,6 +126,7 @@ class App extends React.Component<any, Partial<State>> {
           <Viewer
           visible={this.state.visible}
           onClose={() => { this.setState({ visible: false }); } }
+          afterChange={(activeIndex) => {console.log('activeIndex: ' + activeIndex);} }
           images={images}
           activeIndex={this.state.activeIndex}
           attribute={false}
@@ -134,7 +135,7 @@ class App extends React.Component<any, Partial<State>> {
         </div>
         <div className="footer">
           <div className="container-fluid container-footer">
-            <a href="https://github.com/infeng" className="signature">@infeng</a>
+            <a href="https://github.com/marcindabrowski" className="signature">@marcindabrowski</a>
           </div>
         </div>
       </div>

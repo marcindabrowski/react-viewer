@@ -30,6 +30,7 @@ export interface ViewerCoreState {
 export default class ViewerCore extends React.Component<ViewerProps, ViewerCoreState> {
   static defaultProps = {
     visible: false,
+    afterChange: noop,
     onClose: noop,
     images: [],
     activeIndex: 0,
@@ -173,6 +174,7 @@ export default class ViewerCore extends React.Component<ViewerProps, ViewerCoreS
           });
           let imgCenterXY = this.getImageCenterXY();
           this.handleZoom(imgCenterXY.x, imgCenterXY.y, 1, 1);
+          this.props.afterChange(activeIndex);
         }, 50);
       } else {
         const [width, height] = this.getImgWidthHeight(imgWidth, imgHeight);
@@ -191,6 +193,7 @@ export default class ViewerCore extends React.Component<ViewerProps, ViewerCoreS
           scaleX: 1,
           scaleY: 1,
         });
+        this.props.afterChange(activeIndex);
       }
     };
     img.onerror = () => {

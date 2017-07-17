@@ -1,6 +1,6 @@
 {
   "name": "react-viewer-mda",
-  "version": "2.2.5",
+  "version": "2.2.6",
   "description": "react image viewer",
   "main": "dist/index",
   "scripts": {
@@ -20,7 +20,7 @@
     "image",
     "viewer"
   ],
-  "author": "infeng",
+  "author": "infeng & marcindabrowski",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/marcindabrowski/react-viewer-mda/issues"

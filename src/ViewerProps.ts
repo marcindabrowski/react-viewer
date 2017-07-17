@@ -7,6 +7,8 @@ export interface ImageDecorator {
 interface ViewerProps {
   /** viewer是否可见 */
   visible?: boolean;
+  /** Function that will be called when active index changes */
+  afterChange?: (activeIndex: number) => void;
   /** 点击关闭按钮的回调 */
   onClose?: () => void;
   /** 需要进行浏览的图片地址集合 */
