@@ -8,8 +8,13 @@
 Because i can`t comfortable use [viewerjs](https://github.com/fengyuanchen/viewerjs) in react, so i create react-viewer to replace it.
 This is a fork of [react-viewer](https://github.com/infeng/react-viewer).
 
-Added option to image download and hide navigation arrows when shows only one image.
-Added afterChange property.
+**v2.2.5**
+- Added `downloadable` option to image download.
+- Hide navigation arrows when shows only one image.
+
+**v2.2.6**
+- Added afterChange property.
+- Disable apropriate keyboard shortcuts when `zoomable` and `rotatable` is set to `false`.
 
 ## Installation
 

@@ -359,30 +359,40 @@ export default class ViewerCore extends React.Component<ViewerProps, ViewerCoreS
       // key: ←
       case 37:
         if (e.ctrlKey) {
-          this.handleAction(ActionType.rotateLeft);
+          if (this.props.rotatable) {
+            this.handleAction(ActionType.rotateLeft);
+            isFeatrue = true;
+          }
         } else {
           this.handleAction(ActionType.prev);
+          isFeatrue = true;
         }
-        isFeatrue = true;
         break;
       // key: →
       case 39:
         if (e.ctrlKey) {
-          this.handleAction(ActionType.rotateRight);
+          if (this.props.rotatable) {
+            this.handleAction(ActionType.rotateRight);
+            isFeatrue = true;
+          }
         } else {
           this.handleAction(ActionType.next);
+          isFeatrue = true;
         }
-        isFeatrue = true;
         break;
       // key: ↑
       case 38:
-        this.handleAction(ActionType.zoomIn);
-        isFeatrue = true;
+        if (this.props.zoomable) {
+          this.handleAction(ActionType.zoomIn);
+          isFeatrue = true;
+        }
         break;
       // key: ↓
       case 40:
-        this.handleAction(ActionType.zoomOut);
-        isFeatrue = true;
+        if (this.props.zoomable) {
+          this.handleAction(ActionType.zoomOut);
+          isFeatrue = true;
+        }
         break;
       // key: Ctrl + 1
       case 49:
@@ -502,7 +512,7 @@ export default class ViewerCore extends React.Component<ViewerProps, ViewerCoreS
           rotate={this.state.rotate}
           onChangeImgState={this.handleChangeImgState}
           onResize={this.handleResize}
-          onZoom={this.handleZoom}
+          onZoom={this.props.zoomable ? this.handleZoom : noop}
           zIndex={zIndex + 5}
           scaleX={this.state.scaleX}
           scaleY={this.state.scaleY}
